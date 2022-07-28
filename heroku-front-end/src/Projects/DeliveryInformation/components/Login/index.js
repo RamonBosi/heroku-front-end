@@ -12,7 +12,7 @@ export default function Login(){
                 <button className = 'form-btn-activate'>Login</button>
             </div>
             <div>
-                <p>Não tem uma conta ? <Link to = 'user/create/new'>Clique aqui</Link></p>
+                <p>Não tem uma conta ? <Link to = 'user/create'>Clique aqui</Link></p>
             </div>
         </Form>
     )
