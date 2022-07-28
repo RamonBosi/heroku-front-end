@@ -1,0 +1,28 @@
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
+@mixin media-query($width){
+    @media(max-width: $width){
+        @content
+    }
+};
+
+@mixin width-height($width,$height: auto){
+    width: $width;
+    height: $height;
+};
+
+@mixin button-styles(){
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1.5px 1.5px 0 0 $default-black;
+
+    &:active{
+        box-shadow: none;
+    }
+};

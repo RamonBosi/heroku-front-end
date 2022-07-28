@@ -1,0 +1,64 @@
+form{
+    background-color: $component-background-color;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+    @include flex-center();
+    @include width-height(400px);
+
+    input{
+        outline: none;
+        border: solid 1.5px transparent;
+        padding: 5px 7px;
+        border-radius: 10px;
+
+        &:focus{
+            border: solid 1.5px $default-green;
+        }
+    }
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+
+        .form-btn{
+            display: flex;
+
+            button{
+                margin: 0 4px;
+                @include button-styles();
+
+                &.form-btn-activate{
+                    background-color: $default-green;
+                    color: $default-black;
+
+                    &:hover{
+                        background-color: darken($default-green,10);
+                    }
+                }
+
+                &.form-btn-cancel{
+                    background-color: $default-red;
+                    color: $default-white;
+
+                    &:hover{
+                        background-color: darken($default-red,10);
+                    }
+                }
+            }
+        }
+
+        p{
+            color: $default-white;
+            font-size: 1.8rem;
+
+            a{
+                color: $primary-color-fonts;
+                
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
