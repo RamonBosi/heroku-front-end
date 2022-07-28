@@ -96,6 +96,13 @@ div.form-background{
         }
     }
 
+    @include media-query(500px){
+
+        .title-payment-methods{
+            font-size: 1.9rem;
+        }
+    }
+
     @include media-query(470px){
 
         h1{
@@ -122,6 +129,10 @@ div.form-background{
 
         h1{
             font-size: 2.2rem;
+        }
+
+        .title-payment-methods{
+            font-size: 1.6rem;
         }
     }
 }
