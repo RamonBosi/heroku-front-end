@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Form from "../Form";
 
-export default function RegisterUser(){
+export default function UserForm(){
     return(
         <Form>
             <h2>Cadastrar Usuário</h2>

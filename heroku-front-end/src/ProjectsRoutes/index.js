@@ -8,6 +8,7 @@ export default function ProjectsRoutes() {
       <Routes>
         <Route path = '/' element = {<Home/>}/>
         <Route path = '/deliveryInformation/*' element = {<DeliveryInformation/>}/>
+        <Route path = '*' element = {<h1 style={{color: 'rgba(255,255,255,1)'}}>Página não encontrada</h1>}/>
       </Routes>
     </BrowserRouter>
   );  
