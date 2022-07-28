@@ -1,7 +1,3 @@
-export default function App() {
-  return (
-    <>
-      <h1>testando</h1>
-    </>
-  );  
-}
+import ProjectsRoutes from './ProjectsRoutes'
+
+export default function App(){ return <ProjectsRoutes/> }
