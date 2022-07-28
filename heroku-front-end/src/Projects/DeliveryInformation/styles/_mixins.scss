@@ -26,3 +26,9 @@
         box-shadow: none;
     }
 };
+
+@mixin title-styles(){
+    font-family: 'Audiowide',Arial, Helvetica, sans-serif;
+    color: $primary-color-fonts;
+    font-weight: normal;
+};
