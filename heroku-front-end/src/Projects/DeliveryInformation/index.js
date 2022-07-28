@@ -1,21 +1,12 @@
-import Form from "./components/Form"
+import { Routes, Route } from 'react-router-dom'
+import Login from './components/Login'
 import './styles/index.scss'
 
 export default function DeliveryInformation(){
     return (
-        <>
-            <Form>
-                <input type = 'text'/>
-                <input type = 'text'/>
-                <input type = 'text'/>
-
-                <div className = 'form-btn'>
-                    <button className = 'form-btn-activate'>Tfdsfsdfd</button>
-                    <button  className = 'form-btn-cancel'>Tfdsfsdfd</button>
-
-                </div>
-                <p>Testando <a>dsfdfsdfsd</a></p>
-            </Form>
-        </>
+        <Routes>
+            <Route path = '/' element = {<Login/>}/>
+            <Route path = 'registerUser' element = {<h1>Registrar usuário</h1>}/>
+        </Routes>
     )
 }

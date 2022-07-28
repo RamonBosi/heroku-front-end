@@ -5,7 +5,7 @@ export const RepositoryContext = createContext()
 export default function RepositoryContextProvider({ children }){
 
     const repositoryGithub = {
-        repository: 'https://ramombosi.github.io/heroku-front-end'
+        repository: '/heroku-front-end'
     }
 
     return (
