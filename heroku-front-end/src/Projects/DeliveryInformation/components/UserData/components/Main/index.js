@@ -1,5 +1,6 @@
 import User from "./components/User";
 import UserAddress from "./components/UserAddress";
+import UserPaymentMethods from "./components/UserPaymentMethods";
 
 export default function Main(){
     return(
@@ -7,6 +8,7 @@ export default function Main(){
             <div className = 'user-data-container'>
                 <User userName={'Ramon'}/>
                 <UserAddress/>
+                <UserPaymentMethods/>
             </div>
         </main>
     )

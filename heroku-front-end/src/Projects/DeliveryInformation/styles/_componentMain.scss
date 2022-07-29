@@ -8,14 +8,114 @@ main.user-data{
         align-items: flex-start;
 
         article{
+            margin: 20px 0;
 
             &.user-name{
+                padding: 0 0 0 40px;
 
                 h2{
                     color: $default-white;
 
                     span{
                         color: $primary-color-fonts;
+                    }
+                }
+            }
+
+            &.user-data-db{
+                @include width-height(100%);
+                @include flex-center();
+                background-color: $component-background-color;
+                padding: 15px 25px;
+
+                div.user-data-db-container{
+                    flex-grow: 1;
+                    max-width: 1500px;
+                    display: flex;
+                    flex-direction: column;
+
+                    h2{
+                        @include title-styles();
+                        align-self: center;
+                        margin: 10px 0;
+                    }
+
+                    div.create-user-data-db{
+                        margin: 15px 0 35px 0;
+
+                        button{
+                            @include button-styles();
+                            background-color: $default-green;
+                            font-size: 1.6rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            &:hover{
+                                background-color: darken($default-green,10);
+                            }
+
+                            svg{
+                                font-size: 2rem;
+                                margin: 0 5px 0 0;
+                            }
+                        }
+                    }
+
+                    div.show-user-data-db-container{
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+
+                        div.show-user-data-db{
+
+                            p{
+                                color: $default-white;
+                                margin: 8px 0;
+
+                                span{
+                                    color: $primary-color-fonts;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+
+                        div.update-delete-user-data{
+                            margin: 10px 0;
+
+                            span{
+                                margin: 0 10px;
+
+                                &.update-data{
+
+                                    svg{
+                                        @include button-styles();
+                                        padding: 4px;
+                                        font-size: 4rem;
+                                        background-color: $default-green;
+
+                                        &:hover{
+                                            background-color: darken($default-green,10);
+                                        }
+                                    }
+                                }
+                                
+                                &.delete-data{
+
+                                    svg{
+                                        @include button-styles();
+                                        padding: 4px;
+                                        font-size: 4rem;
+                                        background-color: $default-red;
+                                        color: $default-white;
+
+                                        &:hover{
+                                            background-color: darken($default-red,10);
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
