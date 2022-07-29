@@ -16,7 +16,7 @@ div.form-background{
             @include title-styles();
         }
     
-        input{
+        input,select{
             outline: none;
             border: solid 2px transparent;
             padding: 7px;
@@ -30,6 +30,13 @@ div.form-background{
 
             &:focus{
                 border: solid 2px $default-green;
+            }
+        }
+
+        select{
+            
+            &:focus{
+                background-color: darken($default-white,10);
             }
         }
         
