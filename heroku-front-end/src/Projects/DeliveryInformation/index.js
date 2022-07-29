@@ -3,6 +3,7 @@ import Login from './components/Login'
 import UserForm from './components/UserForm'
 import AddressForm from './components/AddressForm'
 import PaymentMethodsForm from './components/PaymentMethodsForm'
+import UserData from './components/UserData'
 import './styles/index.scss'
 
 export default function DeliveryInformation(){
@@ -10,7 +11,9 @@ export default function DeliveryInformation(){
         <Routes>
             <Route path = '/' element = {<Login/>}/>
             <Route path = 'user/create' element = {<UserForm/>}/>
-            
+
+            <Route path = 'user/:idUser/userData' element = {<UserData/>}/>
+
             <Route path = 'user/:idUser/update' element = {<UserForm/>}/>
 
             <Route path = 'address/user/:idUser/create' element = {<AddressForm/>}/>
