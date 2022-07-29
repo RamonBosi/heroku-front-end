@@ -58,4 +58,35 @@ header.userData-header{
             }
         }
     }
+
+    @include media-query(480px){
+
+        div.userData-container{
+
+            h1{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    @include media-query(370px){
+        padding: 10px;
+
+        div.userData-container{
+
+            > div{
+
+                div.userData-header-btn{
+                    
+                    button{
+                        margin: 0 5px;
+                    }
+                }
+                
+                div.userData-header-logo{
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
