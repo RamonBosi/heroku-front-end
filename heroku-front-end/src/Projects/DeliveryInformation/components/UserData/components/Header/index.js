@@ -10,7 +10,7 @@ export default function Header(){
                         <button className = 'btn-update-user'>Atualizar conta</button>
                         <button className = 'btn-delete-user'>Deletar conta</button>
                     </div>
-                    <div className='userData-header-logo' title='Sair'>
+                    <div className='userData-header-logout' title='Sair'>
                         <MdLogout/>
                     </div>
                 </div>

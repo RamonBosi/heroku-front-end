@@ -64,24 +64,16 @@ div.form-background{
                     @include button-styles();
     
                     &:nth-child(1){
-                        background-color: $default-green;
                         color: $default-black;
-    
-                        &:hover{
-                            background-color: darken($default-green,10);
-                        }
+                        @include add-hover($default-green);
                     }
     
                     &:nth-child(2){
-                        background-color: $default-red;
+                        @include add-hover($default-red);
                         color: $default-white;
     
                         a{
                             color: inherit
-                        }
-
-                        &:hover{
-                            background-color: darken($default-red,10);
                         }
                     }
                 }

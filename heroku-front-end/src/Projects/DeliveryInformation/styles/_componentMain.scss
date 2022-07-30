@@ -45,15 +45,11 @@ main.user-data{
 
                         button{
                             @include button-styles();
-                            background-color: $default-green;
+                            @include add-hover($default-green);
                             font-size: 1.6rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-
-                            &:hover{
-                                background-color: darken($default-green,10);
-                            }
 
                             svg{
                                 font-size: 2rem;
@@ -90,13 +86,9 @@ main.user-data{
 
                                     svg{
                                         @include button-styles();
+                                        @include add-hover($default-green);
                                         padding: 4px;
                                         font-size: 4rem;
-                                        background-color: $default-green;
-
-                                        &:hover{
-                                            background-color: darken($default-green,10);
-                                        }
                                     }
                                 }
                                 
@@ -104,14 +96,10 @@ main.user-data{
 
                                     svg{
                                         @include button-styles();
+                                        @include add-hover($default-red);
                                         padding: 4px;
                                         font-size: 4rem;
-                                        background-color: $default-red;
                                         color: $default-white;
-
-                                        &:hover{
-                                            background-color: darken($default-red,10);
-                                        }
                                     }
                                 }
                             }
