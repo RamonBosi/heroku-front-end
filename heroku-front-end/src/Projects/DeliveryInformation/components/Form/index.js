@@ -1,4 +1,4 @@
-export default function Form({children}){
+export default function Form({formTitle, formInput, formBtn, formText }){
 
     const { width, height } = {
         width: document.defaultView.innerWidth,
@@ -10,7 +10,14 @@ export default function Form({children}){
             <h1>Informações de entregas</h1>
             <form>
                 <div className = 'form-container'>
-                    {children}
+                    {formTitle || <></>}
+                    <div className="form-input">
+                        {formInput}
+                    </div>
+                    <div className="form-btn">
+                        {formBtn}
+                    </div>
+                    {formText ? <div>{formText}</div> : <></>}
                 </div>
             </form>
         </div>

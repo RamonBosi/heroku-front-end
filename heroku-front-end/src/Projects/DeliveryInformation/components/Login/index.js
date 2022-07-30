@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 
 export default function Login(){
     return(
-        <Form>
-            <div className = 'form-input'>
-                <input type = 'email' placeholder='Email'/>
-                <input type = 'password' placeholder='Senha'/>
-            </div>
-            <div className = 'form-btn'>
-                <button className = 'form-btn-activate'>Login</button>
-            </div>
-            <div>
+        <Form
+            formInput={
+                <>
+                    <input type = 'email' placeholder='Email'/>
+                    <input type = 'password' placeholder='Senha'/>
+                </>
+            }
+            formBtn ={<button>Login</button>}
+            formText = {
                 <p>Não tem uma conta ? <Link to = 'user/create'>Clique aqui</Link></p>
-            </div>
-        </Form>
+            }
+        />
     )
 }

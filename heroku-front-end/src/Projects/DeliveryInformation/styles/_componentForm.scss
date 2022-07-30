@@ -63,7 +63,7 @@ div.form-background{
                     font-size: 2rem;
                     @include button-styles();
     
-                    &.form-btn-activate{
+                    &:nth-child(1){
                         background-color: $default-green;
                         color: $default-black;
     
@@ -72,7 +72,7 @@ div.form-background{
                         }
                     }
     
-                    &.form-btn-cancel{
+                    &:nth-child(2){
                         background-color: $default-red;
                         color: $default-white;
     
