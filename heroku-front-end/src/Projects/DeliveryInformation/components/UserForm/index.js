@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { validationCreateUser } from '../../validations';
+import { validationUser } from '../../validations';
 import Form from "../Form";
 
 export default function UserForm(){
     const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(validationCreateUser)
+        resolver: yupResolver(validationUser)
     })
     
-    const createUser = (data) => console.log(data) 
+    const dataSubmit = (data) => console.log(data) 
 
     return(
         <Form
-            handleSubmit={handleSubmit(createUser)}
+            handleSubmit={handleSubmit(dataSubmit)}
             formTitle={<h2>Cadastrar Usuário</h2>}
             formInput={
                 <>
