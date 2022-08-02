@@ -8,7 +8,7 @@ const positiveNumber = 'Digite um número positivo'
 const integerNumber = 'Digite um número inteiro'
 
 export const loginValidation = yup.object({
-    email: yup.string().max(100,).email(validEmail).required(dataRequired('Email')),
+    email: yup.string().max(100,maxCharacters(100,'Email')).email(validEmail).required(dataRequired('Email')),
     password: yup.string().max(200,maxCharacters(200,'senha')).required(dataRequired('Senha'))
 }).required()
 
