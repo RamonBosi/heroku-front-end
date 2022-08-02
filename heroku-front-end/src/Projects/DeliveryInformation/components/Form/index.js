@@ -1,4 +1,4 @@
-export default function Form({formTitle, formInput, formBtn, formText }){
+export default function Form({handleSubmit,formTitle, formInput, formBtn, formText }){
 
     const { width, height } = {
         width: document.defaultView.innerWidth,
@@ -8,7 +8,7 @@ export default function Form({formTitle, formInput, formBtn, formText }){
     return (
         <div style={{width,height}} className = 'form-background'>
             <h1>Informações de entregas</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className = 'form-container'>
                     {formTitle || <></>}
                     <div className="form-input">
