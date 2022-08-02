@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Form from '../Form'
 import { loginValidation } from '../../validations'
+import { server } from '../../server'
 
 export default function Login(){
 
@@ -10,7 +11,14 @@ export default function Login(){
         resolver: yupResolver(loginValidation)
     })
 
-    const loginUser = (data) => console.log(data)
+    const loginUser = (dataUser) => {
+
+        const user = dataUser
+
+        server.post('/usuario/login',{email: user.email, senha: user.password})
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+    }
 
     return(
         <Form
