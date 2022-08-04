@@ -48,7 +48,6 @@ export default function UserForm(){
         }
 
         if(idUser){
-            //Atualizar
             server.put(`/usuario/${getIdUser()}/atualizar`,user)
             .then((res) =>{
                 const message = res.data
@@ -63,7 +62,6 @@ export default function UserForm(){
             .catch(() => alert('Não foi possível atualizar, tente novamente'))
 
         }else{
-            //Cadastrar
             const createdUser = await server.post('/usuario/cadastrar',user)
             .then((res) =>{
                 if(res.data.error){
@@ -129,10 +127,12 @@ export default function UserForm(){
             formBtn={
                 <>
                     <button type = 'submit'>
-                        {idUser ? 'Atualizar' : 'Cadastrar'} usuário
+                        {idUser ? 'Atualizar' : 'Cadastrar'}
                     </button>
                     <button>
-                        <Link to = '/deliveryInformation'>Cancelar</Link>
+                        <Link to = { idUser ? `/deliveryInformation/user/${getIdUser()}/userData` : '/deliveryInformation'}>
+                            Cancelar
+                        </Link>
                     </button>
                 </>
             }
