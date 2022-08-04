@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { validationUser } from '../../validations';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import Form from "../Form";
 import { server } from '../../server';
 import { UserContext } from '../../contexts/userContext';
@@ -13,9 +13,7 @@ export default function UserForm(){
     
     const { idUser } = useParams()
     
-    const [updateUser, setUpdateUser] = useState()
-    
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
         resolver: yupResolver(validationUser)
     })
 
@@ -29,14 +27,11 @@ export default function UserForm(){
                 if(data.error){
                     alert('Não foi possível recuperar os dados')
                 }else{
-
-                    const userData = {
-                        nome: data.response.nome,
-                        cpf: data.response.cpf,
-                        email: data.response.email,
-                        senha: data.response.senha
-                    }
-                    setUpdateUser(userData)
+                
+                    setValue('nome',data.response.nome)
+                    setValue('cpf',data.response.cpf)
+                    setValue('email',data.response.email)
+                    setValue('password',data.response.senha)
                 }
             })
             .catch(() => alert('Não foi possível recuperar os dados'))
@@ -54,7 +49,19 @@ export default function UserForm(){
 
         if(idUser){
             //Atualizar
-            console.log(`Usuario de id ${getIdUser()} atualizado`)
+            server.put(`/usuario/${getIdUser()}/atualizar`,user)
+            .then((res) =>{
+                const message = res.data
+
+                if(message.error){
+                    alert(message.response)
+                }else{
+                    alert(message.response)
+                    goToPage(`user/${getIdUser()}/userData`)
+                }
+            })
+            .catch(() => alert('Não foi possível atualizar, tente novamente'))
+
         }else{
             //Cadastrar
             const createdUser = await server.post('/usuario/cadastrar',user)
@@ -98,25 +105,21 @@ export default function UserForm(){
             formInput={
                 <>
                     <input 
-                        defaultValue={updateUser?.nome}
                         type = 'text' 
                         placeholder="Nome" 
                         {...register('nome')}/>
                     <p>{errors.nome?.message}</p>
                     <input 
-                        defaultValue={updateUser?.cpf}
                         type = "number" 
                         placeholder="CPF" 
                         {...register('cpf')}/>
                     <p>{errors.cpf?.message}</p>
                     <input 
-                        defaultValue={updateUser?.email}
                         type = 'text' 
                         placeholder="Email" 
                         {...register('email')}/>
                     <p>{errors.email?.message}</p>
                     <input 
-                        defaultValue={updateUser?.senha}
                         type = {idUser ? 'text' : 'password'} 
                         placeholder="Senha" 
                         {...register('password')}/>
