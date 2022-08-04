@@ -129,7 +129,7 @@ export default function UserForm(){
                     <button type = 'submit'>
                         {idUser ? 'Atualizar' : 'Cadastrar'}
                     </button>
-                    <button>
+                    <button type = 'reset'>
                         <Link to = { idUser ? `/deliveryInformation/user/${getIdUser()}/userData` : '/deliveryInformation'}>
                             Cancelar
                         </Link>

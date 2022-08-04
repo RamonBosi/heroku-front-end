@@ -109,7 +109,7 @@ export default function AddressForm(){
                 <button type = 'submit'>
                     {idAddress ? 'Atualizar' : 'Cadastrar'}
                 </button>
-                <button>
+                <button type ='reset'>
                     <Link to = {`/deliveryInformation/user/${getIdUser()}/userData`}>Cancelar
                     </Link>
                 </button>
