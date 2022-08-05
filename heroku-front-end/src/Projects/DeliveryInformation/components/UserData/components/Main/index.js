@@ -11,8 +11,6 @@ export default function Main(){
     
     const [userData, setUserData] = useState()
 
-    console.log(userData)
-
     useEffect(() =>{
         server.get(`usuario/${getIdUser()}/pegarDados`)
         .then((res) => {
@@ -32,7 +30,7 @@ export default function Main(){
             <div className = 'user-data-container'>
                 <User userName={userData?.usuario.nome}/>
                 <UserAddress address={userData?.enderecos}/>
-                <UserPaymentMethods/>
+                <UserPaymentMethods paymentMethods={userData?.formasPagamentos}/>
             </div>
         </main>
     )
