@@ -8,8 +8,10 @@ import UserPaymentMethods from "./components/UserPaymentMethods";
 export default function Main(){
 
     const { getIdUser } = useContext(UserContext)
-
+    
     const [userData, setUserData] = useState()
+
+    console.log(userData)
 
     useEffect(() =>{
         server.get(`usuario/${getIdUser()}/pegarDados`)
@@ -19,7 +21,6 @@ export default function Main(){
             if(data.error){
                 alert(data.response)
             }else{
-                console.log(data.response)
                 setUserData(data.response)
             }
         })
@@ -30,7 +31,7 @@ export default function Main(){
         <main className = 'user-data'>
             <div className = 'user-data-container'>
                 <User userName={userData?.usuario.nome}/>
-                <UserAddress/>
+                <UserAddress address={userData?.enderecos}/>
                 <UserPaymentMethods/>
             </div>
         </main>
