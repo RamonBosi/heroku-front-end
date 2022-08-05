@@ -28,6 +28,10 @@ header.userData-header{
 
                     &.btn-update-user{
                         @include add-hover($default-green);
+
+                        a{
+                            color: inherit;
+                        }
                     }
 
                     &.btn-delete-user{
