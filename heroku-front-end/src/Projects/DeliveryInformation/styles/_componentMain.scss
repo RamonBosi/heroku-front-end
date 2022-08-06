@@ -64,7 +64,6 @@ main.user-data{
                         flex-wrap: wrap;
                         gap: 20px;
                         
-
                         div.show-user-data-db{
 
                             p{
@@ -85,6 +84,7 @@ main.user-data{
                                 margin: 0 10px;
 
                                 &.update-data{
+                                    margin: 0;
 
                                     svg{
                                         @include button-styles();
