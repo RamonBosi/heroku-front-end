@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 import { MdLogout } from 'react-icons/md'
 import { UserContext } from '../../../../contexts/userContext'
 import { server } from '../../../../server'
+import { RepositoryContext } from '../../../../../../ProjectsRoutes/RepositoryContext'
 
 export default function Header(){
 
     const { goToPage, getIdUser, removeIdUser } = useContext(UserContext)
+
+    const { repoDeliveryInformation } = useContext(RepositoryContext)
 
     const deleteUser = () =>{
         server.delete(`/usuario/${getIdUser()}/deletar`)
@@ -18,7 +21,7 @@ export default function Header(){
             }else{
                 alert(data.response)
                 removeIdUser()
-                goToPage(`/deliveryInformation`)
+                goToPage(`${repoDeliveryInformation}`)
             }
         })
         .catch(() => alert('Não foi possível deletar, tente mais tarde'))
@@ -26,7 +29,7 @@ export default function Header(){
 
     const logoutUser = () =>{
         removeIdUser()
-        goToPage(`/deliveryInformation`)
+        goToPage(`${repoDeliveryInformation}`)
     }
 
     return(
@@ -36,7 +39,7 @@ export default function Header(){
                 <div>
                     <div className='userData-header-btn'>
                         <button className = 'btn-update-user'>
-                            <Link to = {`/deliveryInformation/user/${getIdUser()}/update`}>
+                            <Link to = {`${repoDeliveryInformation}/user/${getIdUser()}/update`}>
                                 Atualizar conta
                             </Link>
                         </button>
