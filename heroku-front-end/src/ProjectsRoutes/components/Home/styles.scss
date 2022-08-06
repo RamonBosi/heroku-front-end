@@ -1,0 +1,43 @@
+$default-black: rgba(0,0,0,1);
+$default-white: rgba(255,255,255,1);
+$heroku: rgb(190, 0, 254);
+
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
+div.home{
+    @include flex-center();
+    margin: 40px 0;
+    color: $default-white;
+    padding: 15px;
+
+    span.heroku-logo{
+        color: $heroku;
+    }
+
+    ul{
+        margin: 25px 0 0 0;
+        list-style-type: none;
+
+        > li{
+            margin: 15px 0;
+        }
+    }
+
+    a{
+        color: $heroku;
+        font-size: 2rem;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
