@@ -32,7 +32,7 @@ export default function Login(){
                 goToPage(`user/${id}/userData`)
             }
         })
-        .catch(() => console.log('Algo deu errado na requisição'))
+        .catch(() => alert('Algo deu errado no processo de login, tente mais tarde'))
     }
 
     return(

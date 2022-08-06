@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams, Link } from "react-router-dom";
+import { RepositoryContext } from "../../../../ProjectsRoutes/RepositoryContext";
 import { UserContext } from "../../contexts/userContext";
 import { server } from "../../server";
 import { validationAddress } from "../../validations";
@@ -14,6 +15,8 @@ export default function AddressForm(){
     })
 
     const { goToPage, getIdUser } = useContext(UserContext)
+
+    const { repoDeliveryInformation } = useContext(RepositoryContext)
 
     const { idAddress } = useParams()
 
@@ -55,7 +58,7 @@ export default function AddressForm(){
                 alert(data.response)
             }else{
                 alert(data.response)
-                goToPage(`user/${getIdUser()}/userData`)
+                goToPage(`${repoDeliveryInformation}/user/${getIdUser()}/userData`)
             }
         })
         .catch(() => alert('Não foi possível atualizar, tente mais tarde'))
@@ -69,7 +72,7 @@ export default function AddressForm(){
                 alert(data.response)
             }else{
                 alert(data.response)
-                goToPage(`user/${getIdUser()}/userData`)
+                goToPage(`${repoDeliveryInformation}/user/${getIdUser()}/userData`)
             }
         })
         .catch(() => alert('Não foi possível cadastrar o endereço, tente mais tarde'))
@@ -110,7 +113,7 @@ export default function AddressForm(){
                     {idAddress ? 'Atualizar' : 'Cadastrar'}
                 </button>
                 <button type ='reset'>
-                    <Link to = {`/deliveryInformation/user/${getIdUser()}/userData`}>Cancelar
+                    <Link to = {`${repoDeliveryInformation}/user/${getIdUser()}/userData`}>Cancelar
                     </Link>
                 </button>
             </>

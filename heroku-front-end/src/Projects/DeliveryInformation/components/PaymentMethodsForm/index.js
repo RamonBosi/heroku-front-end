@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
+import { RepositoryContext } from "../../../../ProjectsRoutes/RepositoryContext";
 import { UserContext } from "../../contexts/userContext";
 import { server } from "../../server";
 import Form from "../Form";
@@ -9,6 +10,8 @@ export default function PaymentMethodsForm(){
     const { register, handleSubmit, setValue } = useForm()
     
     const { goToPage, getIdUser } = useContext(UserContext)
+
+    const { repoDeliveryInformation } = useContext(RepositoryContext)
 
     const { idPaymentMethods } = useParams()
 
@@ -85,7 +88,7 @@ export default function PaymentMethodsForm(){
                     {idPaymentMethods ? 'Atualizar' : 'Cadastrar'}
                 </button>
                 <button type='reset'>
-                    <Link to = {`/deliveryInformation/user/${getIdUser()}/userData`}>Cancelar
+                    <Link to = {`${repoDeliveryInformation}/user/${getIdUser()}/userData`}>Cancelar
                     </Link>
                 </button>
             </>

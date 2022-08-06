@@ -6,11 +6,14 @@ import { useContext, useEffect } from 'react';
 import Form from "../Form";
 import { server } from '../../server';
 import { UserContext } from '../../contexts/userContext';
+import { RepositoryContext } from '../../../../ProjectsRoutes/RepositoryContext';
 
 export default function UserForm(){
     
     const { goToPage, setIdUser, getIdUser } = useContext(UserContext)
     
+    const { repoDeliveryInformation } = useContext(RepositoryContext)
+
     const { idUser } = useParams()
     
     const { register, handleSubmit, formState: { errors }, setValue } = useForm({
@@ -90,7 +93,7 @@ export default function UserForm(){
                 })
                 .catch(() => {
                     alert('Usuário criado, tente fazer login dentro de alguns minutos')
-                    goToPage(`/deliveryInformation`)
+                    goToPage(`${repoDeliveryInformation}`)
                 })
             }
         }
@@ -130,7 +133,7 @@ export default function UserForm(){
                         {idUser ? 'Atualizar' : 'Cadastrar'}
                     </button>
                     <button type = 'reset'>
-                        <Link to = { idUser ? `/deliveryInformation/user/${getIdUser()}/userData` : '/deliveryInformation'}>
+                        <Link to = { idUser ? `${repoDeliveryInformation}/user/${getIdUser()}/userData` : `${repoDeliveryInformation}`}>
                             Cancelar
                         </Link>
                     </button>
