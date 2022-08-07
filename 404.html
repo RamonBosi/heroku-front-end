@@ -3,12 +3,57 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404</title>
+    <title>Calma !</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body{
+        background-color: rgba(0,0,0,1);
+        color: rgba(255,255,255,1);
+        font-size: 18px;
+      }
+
+      div.not-found{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+
+      div.not-found-container{
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1{
+        color: rgb(7, 251, 255);
+        align-self: center;
+        font-size: 25px;
+      }
+
+      span.destaque{
+        color: rgb(7, 251, 255);
+      }
+
+      a{
+        color: rgb(7, 251, 255);
+      }
+    </style>
   </head>
   <body>
-    <h1>Pagina não encontrada no GitHub Pages</h1>
-    <script>
-      location.href = '/heroku-front-end/deliveryInformation/user/1/userData'
-    </script>
+    <div class="not-found">
+      <div class="not-found-container">
+        <h1>FIQUE TRANQUILO</h1>
+        <p>A aplicação <span class="destaque">não deu erro !</span></p>
+        <p>É um problema que acontece na hospedagem do site, sei que é chato mas terá que voltar no menu principal e selecionar a aplicação que estava 🥺</p>
+        <p><span class="destaque">Por favor continue explorando minhas aplicações</span>, tenho certeza que irá gostar 😊❤</p>
+
+        <a href = '/heroku-front-end'>Clique aqui para voltar no menu das aplicações</a>
+    </div>
+  </div>
   </body>
 </html>
