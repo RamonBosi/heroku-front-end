@@ -1,12 +1,16 @@
+import { useState } from "react"
+
 export default function Form({handleSubmit,formTitle, formInput, formBtn, formText }){
 
-    const { width, height } = {
-        width: document.defaultView.innerWidth,
-        height: document.defaultView.innerHeight
-    }
+    const [widthHeight] = useState(() =>{
+        return {
+            width: document.defaultView.innerWidth,
+            height: document.defaultView.innerHeight
+        }
+    })
 
     return (
-        <div style={{width,height}} className = 'form-background'>
+        <div style={widthHeight} className = 'form-background'>
             <h1>Informações de entregas</h1>
             <form onSubmit={handleSubmit}>
                 <div className = 'form-container'>
