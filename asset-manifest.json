@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/heroku-front-end/static/css/main.3765aab0.css",
-    "main.js": "/heroku-front-end/static/js/main.3e823c99.js",
+    "main.js": "/heroku-front-end/static/js/main.f257b209.js",
     "static/js/787.31c957c0.chunk.js": "/heroku-front-end/static/js/787.31c957c0.chunk.js",
     "index.html": "/heroku-front-end/index.html",
     "main.3765aab0.css.map": "/heroku-front-end/static/css/main.3765aab0.css.map",
-    "main.3e823c99.js.map": "/heroku-front-end/static/js/main.3e823c99.js.map",
+    "main.f257b209.js.map": "/heroku-front-end/static/js/main.f257b209.js.map",
     "787.31c957c0.chunk.js.map": "/heroku-front-end/static/js/787.31c957c0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3765aab0.css",
-    "static/js/main.3e823c99.js"
+    "static/js/main.f257b209.js"
   ]
 }
