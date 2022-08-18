@@ -40,16 +40,20 @@ export default function Login(){
             handleSubmit={handleSubmit(loginUser)}
             formInput={
                 <>
-                    <input 
-                        type = 'text' 
-                        placeholder='Email' 
-                        {...register('email')}/>
-                    <p>{errors.email?.message}</p>    
-                    <input 
-                        type = 'password' 
-                        placeholder='Senha' 
-                        {...register('password')}/>
-                    <p>{errors.password?.message}</p>     
+                    <div>
+                        <label>Email</label>
+                        <input 
+                            type = 'text'  
+                            {...register('email')}/>
+                        <p>{errors.email?.message}</p> 
+                    </div>
+                    <div>
+                        <label>Senha</label>   
+                        <input 
+                            type = 'password'  
+                            {...register('password')}/>
+                        <p>{errors.password?.message}</p>
+                    </div>     
                 </>
             }
             formBtn ={<button type='submit'>Login</button>}

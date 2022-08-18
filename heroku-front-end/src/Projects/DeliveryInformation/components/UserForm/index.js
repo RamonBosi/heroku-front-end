@@ -105,26 +105,34 @@ export default function UserForm(){
             formTitle={<h2>{idUser ? 'Atualizar' : 'Cadastrar'} usuário</h2>}
             formInput={
                 <>
-                    <input 
-                        type = 'text' 
-                        placeholder="Nome" 
-                        {...register('nome')}/>
-                    <p>{errors.nome?.message}</p>
-                    <input 
-                        type = "number" 
-                        placeholder="CPF" 
-                        {...register('cpf')}/>
-                    <p>{errors.cpf?.message}</p>
-                    <input 
-                        type = 'text' 
-                        placeholder="Email" 
-                        {...register('email')}/>
-                    <p>{errors.email?.message}</p>
-                    <input 
-                        type = {idUser ? 'text' : 'password'} 
-                        placeholder="Senha" 
-                        {...register('password')}/>
-                    <p>{errors.password?.message}</p>
+                    <div>
+                        <label>Nome</label>
+                        <input 
+                            type = 'text' 
+                            {...register('nome')}/>
+                        <p>{errors.nome?.message}</p>
+                    </div>
+                    <div>
+                        <label>CPF</label>
+                        <input 
+                            type = "number"  
+                            {...register('cpf')}/>
+                        <p>{errors.cpf?.message}</p>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input 
+                            type = 'text' 
+                            {...register('email')}/>
+                        <p>{errors.email?.message}</p>
+                    </div>
+                    <div>
+                        <label>Senha</label>
+                        <input 
+                            type = {idUser ? 'text' : 'password'} 
+                            {...register('password')}/>
+                        <p>{errors.password?.message}</p>
+                    </div>
                 </>
             }
             formBtn={

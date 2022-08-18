@@ -85,26 +85,34 @@ export default function AddressForm(){
         formTitle={<h2>{idAddress ? 'Atualizar' : 'Cadastrar'} Endereço</h2>}
         formInput = {
             <>
-                <input 
-                    type = 'text' 
-                    placeholder="UF" 
-                    {...register('uf')}/>
-                <p>{errors.uf?.message}</p>
-                <input 
-                    type = 'text' 
-                    placeholder="Cidade" 
-                    {...register('cidade')}/>
-                <p>{errors.cidade?.message}</p>
-                <input 
-                    type = 'text' 
-                    placeholder="Rua" 
-                    {...register('rua')}/>
-                <p>{errors.rua?.message}</p>
-                <input 
-                    type = 'text' 
-                    placeholder="Bairro" 
-                    {...register('bairro')}/>
-                <p>{errors.bairro?.message}</p>
+                <div>
+                    <label>UF</label>
+                    <input 
+                        type = 'text'
+                        {...register('uf')}/>
+                    <p>{errors.uf?.message}</p>
+                </div>
+                <div>
+                    <label>Cidade</label>
+                    <input 
+                        type = 'text' 
+                        {...register('cidade')}/>
+                    <p>{errors.cidade?.message}</p>
+                </div>
+                <div>
+                    <label>Rua</label>
+                    <input 
+                        type = 'text'  
+                        {...register('rua')}/>
+                    <p>{errors.rua?.message}</p>
+                </div>
+                <div>
+                    <label>Bairro</label>
+                    <input 
+                        type = 'text' 
+                        {...register('bairro')}/>
+                    <p>{errors.bairro?.message}</p>
+                </div>
             </>
         }
         formBtn = {

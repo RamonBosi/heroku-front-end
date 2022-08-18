@@ -9,8 +9,9 @@ div.form-background{
 
     form{
         background-color: $component-background-color;
-        padding: 25px;
+        padding: 20px;
         border-radius: 10px;
+        overflow: auto;
 
         h2{
             @include title-styles();
@@ -22,7 +23,6 @@ div.form-background{
             border: solid 2px transparent;
             padding: 7px;
             border-radius: 10px;
-            margin: 10px 0;
             font-size: 2.3rem;
     
             &[type='number']::-webkit-inner-spin-button{
@@ -45,14 +45,22 @@ div.form-background{
             display: flex;
             flex-direction: column;
             align-items: center;
-    
-            div{
-                margin: 18px 0;
-            }
+            gap: 18px 0;
     
             .form-input{
-                display: flex;
-                flex-direction: column;
+                @extend .form-container;
+                align-items: flex-start;
+                
+                label{
+                    color: $default-white;
+                    font-size: 2rem;
+                }
+
+                > div{
+                    @extend .form-container;
+                    align-items: flex-start;
+                    gap: 8px 0;
+                }
             }
     
             .form-btn{
@@ -103,6 +111,11 @@ div.form-background{
     }
 
     @include media-query(470px){
+
+        form{
+            width: 100%;
+            border-radius: 0;
+        }
 
         h1{
             font-size: 2.8rem;

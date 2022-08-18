@@ -11,7 +11,6 @@ export default function Form({handleSubmit,formTitle, formInput, formBtn, formTe
 
     return (
         <div style={widthHeight} className = 'form-background'>
-            <h1>Informações de entregas</h1>
             <form onSubmit={handleSubmit}>
                 <div className = 'form-container'>
                     {formTitle || <></>}
