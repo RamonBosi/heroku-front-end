@@ -28,8 +28,20 @@ export default function Header(){
     }
 
     const logoutUser = () =>{
-        removeIdUser()
-        goToPage(`${repoDeliveryInformation}`)
+
+        server.put(`/usuario/${getIdUser()}/logout`)
+        .then((res)=>{
+            const data = res.data
+
+            if(data.error){
+                alert(data.response)
+            }else{
+                alert(data.response)
+                removeIdUser()
+                goToPage(`${repoDeliveryInformation}`)
+            }
+        })
+        .catch(() => alert('Não foi possível deletar, tente mais tarde'))
     }
 
     return(
