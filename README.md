@@ -1,4 +1,4 @@
 # Heroku Front-end
- Front-end de aplicações onde criei o servidor no Heroku
+ Front-end da aplicação ``Informações de entrega`` com servidor hospedado na Heroku 
 
-[Aplicação Heroku](https://ramonbosi.github.io/heroku-front-end/)
+[Informações de entrega](https://ramonbosi.github.io/heroku-front-end/)
