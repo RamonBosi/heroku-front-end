@@ -1,6 +1,5 @@
 div.form-background{
     @include flex-center();
-    flex-direction: column;
 
     h1{
         @include title-styles();
@@ -10,8 +9,8 @@ div.form-background{
     form{
         background-color: $component-background-color;
         padding: 20px;
+        margin: 40px 0 20px;
         border-radius: 10px;
-        overflow: auto;
 
         h2{
             @include title-styles();
