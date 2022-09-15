@@ -5,9 +5,9 @@ import Data, { LoadData } from "../Data";
 
 export default function UserAddress({ address }){
 
-    const { goToPage, getIdUser } = useContext(UserContext)
+    const { goToPage, getIdUser, setGetUserData, getUserData } = useContext(UserContext)
 
-    const [loadAddress, setLoadAddress] = useState()
+    const [loadAddress, setLoadAddress] = useState(<></>)
 
     useEffect(() =>{
         if(address){
@@ -29,7 +29,7 @@ export default function UserAddress({ address }){
                             alert(data.response)
                         }else{
                             alert(data.response)
-                            window.location.reload()
+                            setGetUserData(!getUserData)
                         }
                     })
                     .catch(() => alert('Não foi possível deletar'))
@@ -60,7 +60,7 @@ export default function UserAddress({ address }){
             titleData={'Endereços'}
             createData={`address/user/${getIdUser()}/create`}
             titleCreate = {'Cadastrar endereço'}
-            data={loadAddress || <></>}
+            data={address ? loadAddress : <></>}
         />
     )
 }

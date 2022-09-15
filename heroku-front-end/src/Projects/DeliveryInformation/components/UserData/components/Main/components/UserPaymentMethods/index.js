@@ -5,9 +5,9 @@ import Data, { LoadData } from "../Data";
 
 export default function UserPaymentMethods({ paymentMethods }){
 
-    const { goToPage, getIdUser } = useContext(UserContext)
+    const { goToPage, getIdUser, setGetUserData, getUserData } = useContext(UserContext)
 
-    const [loadPaymentMethods, setLoadPaymentMethods] = useState()
+    const [loadPaymentMethods, setLoadPaymentMethods] = useState(<></>)
 
     useEffect(() =>{
         if(paymentMethods){
@@ -28,8 +28,8 @@ export default function UserPaymentMethods({ paymentMethods }){
                         if(data.error){
                             alert(data.response)
                         }else{
-                            alert(data.response)
-                            window.location.reload()
+                          alert(data.response)
+                          setGetUserData(!getUserData)
                         }
                     })
                     .catch(() => alert('Não foi possível deletar'))
@@ -37,19 +37,20 @@ export default function UserPaymentMethods({ paymentMethods }){
 
                 return (
                     <LoadData 
-                        userData={
+                      userData={
                         <>
-                            <p><span>Forma de pagamento: </span>{tipo_pagamento}</p>
+                          <p><span>Forma de pagamento: </span>{tipo_pagamento}</p>
                         </>
-                    }
-                        updateData={updatePaymentMethods}
-                        deleteData={deletePaymentMethods}
+                      }
+                      updateData={updatePaymentMethods}
+                      deleteData={deletePaymentMethods}
                     />
                 )
             })
 
             setLoadPaymentMethods(loadUserPaymentMethods)
         }
+
     },[paymentMethods])
 
     return(
@@ -57,7 +58,7 @@ export default function UserPaymentMethods({ paymentMethods }){
             titleData={'Formas de pagamento'}
             createData={`paymentMethods/user/${getIdUser()}/create`}
             titleCreate = {'Cadastrar Forma de pagamento'}
-            data={loadPaymentMethods || <></>}
+            data={paymentMethods ? loadPaymentMethods : <></>}
         />
     )
 }

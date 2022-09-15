@@ -7,7 +7,7 @@ import UserPaymentMethods from "./components/UserPaymentMethods";
 
 export default function Main(){
 
-    const { getIdUser } = useContext(UserContext)
+    const { getIdUser, getUserData } = useContext(UserContext)
     
     const [userData, setUserData] = useState()
 
@@ -23,7 +23,7 @@ export default function Main(){
             }
         })
         .catch(() => alert('Não foi possível pegar os dados, tente mais tarde'))
-    },[])
+    },[getUserData])
 
     return(
         <main className = 'user-data'>
