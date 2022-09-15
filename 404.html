@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calma !</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root{
+        --cor-fonte: rgb(254, 165, 0);
+      }
+
+      body{
+        background-color: rgba(0,0,0,1);
+        color: rgba(255,255,255,1);
+        font-size: 18px;
+      }
+
+      div.not-found{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+
+      div.not-found-container{
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
+      }
+
+      h1{
+        color: var(--cor-fonte);
+        align-self: center;
+        font-size: 25px;
+      }
+
+      span.destaque{
+        color: var(--cor-fonte);
+      }
+
+      a{
+        color: var(--cor-fonte);
+      }
+
+      a:hover{
+        color: rgba(254, 165, 0, .7)
+      }
+    </style>
+  </head>
+  <body>
+    <div class="not-found">
+      <div class="not-found-container">
+        <h1>FIQUE TRANQUILO</h1>
+        <p>A aplicação <span class="destaque">não deu erro !</span></p>
+        <p>É um problema que acontece na hospedagem do site quando a página é atualizada, sei que é chato mas terá que voltar no menu principal e selecionar a aplicação que estava 🥺</p>
+        <p><span class="destaque">Por favor continue explorando minhas aplicações</span>, tenho certeza que irá gostar 😊💖</p>
+
+        <a href = '/heroku-front-end'>Clique aqui para voltar no menu das aplicações</a>
+    </div>
+  </div>
+  </body>
+</html>
